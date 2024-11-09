@@ -71,7 +71,7 @@ def is_valid_date_format(date_str):
         return False
 
 def main(current_date):
-    blacklist = load_blacklisted_words('blacklisted_words.bin')
+    blacklist = load_blacklisted_words()
 
     filename = "database.csv"
     data_by_date = load_data_by_date(filename, blacklist)
