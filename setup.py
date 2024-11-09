@@ -16,7 +16,7 @@ setup(
         'colorama',
     ],
     description='A CLI app for discovering historical events.',
-    url='https://github.com/lennovative/history_alarm',
+    url='https://github.com/lennovative/history_alert',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
