@@ -14,12 +14,15 @@ pip install git+https://github.com/lennovative/history_alert.git
 ```
 
 ### Usage
+Run without specified date
 ```bash
 historyalert
 ```
+Run with specified date
 ```
 historyalert -d MM-DD
 ```
+Run in silent mode
 ```
 historyalert --silent -d MM-DD
 ```
