@@ -2,7 +2,7 @@ import csv
 import random
 from datetime import datetime
 
-def load_data_by_date(filename):
+def load_data_by_date(filename, blacklist):
     data_by_date = {}
 
     with open(filename, mode="r", encoding="utf-8") as file:
@@ -11,6 +11,10 @@ def load_data_by_date(filename):
         for row in reader:
             date = row["Date"]
             event_type = row["Type"]
+            description = row["Description"]
+            for word in blacklist:
+                if word in description.lower():
+                    continue
             if date not in data_by_date:
                 data_by_date[date] = {"Event": [], "Birthday": []}
             data_by_date[date][event_type].append(row)
@@ -42,8 +46,9 @@ def display_results(date, event, birthday):
 
 
 def main():
+    blacklist = ["kill"]
     filename = "database.csv"
-    data_by_date = load_data_by_date(filename)
+    data_by_date = load_data_by_date(filename, blacklist)
     current_date = datetime.now().strftime("%B %d")
     event, birthday = get_random_event_and_birthday_for_date(data_by_date, current_date)
     display_results(current_date, event, birthday)
