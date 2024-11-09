@@ -14,6 +14,7 @@ setup(
             'historyalert=main:main',
         ],
     },
+    data_files=[('', ['blacklisted_words.bin'])],
     install_requires=[
         'pandas',
         'pyfiglet',
