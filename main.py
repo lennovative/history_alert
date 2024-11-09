@@ -29,7 +29,6 @@ def main():
     args = parser.parse_args()
 
     if not args.silent and not args.date:
-        banner = pyfiglet.figlet_format("HistoryAlert")
         print(Fore.CYAN + banner + Style.RESET_ALL)
 
     if not any(vars(args).values()):
