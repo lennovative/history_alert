@@ -1,12 +1,14 @@
 import csv
 import random
 from datetime import datetime
-import base64
+import pkg_resources
 
-def load_data_by_date(filename, blacklist):
+def load_data_by_date(blacklist):
     data_by_date = {}
 
-    with open(filename, mode="r", encoding="utf-8") as file:
+    csv_file_path = pkg_resources.resource_filename(__name__, 'database.csv')
+   
+    with open(csv_file_path, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
@@ -24,13 +26,16 @@ def load_data_by_date(filename, blacklist):
     return data_by_date
 
 
+def load_blacklisted_words():
+    bin_file_path = pkg_resources.resource_filename(__name__, 'blacklisted_words.bin')
 
-def load_blacklisted_words_from_binary(filepath='blacklisted_words.bin'):
-    with open(filepath, 'rb') as file:
-        encoded_data = file.read()
-
-    decoded_data = base64.b64decode(encoded_data).decode('utf-8').split(',')
-    return decoded_data
+    try:
+        with open(bin_file_path, 'rb') as file:
+            data = file.read()
+        return data.decode('utf-8').split(',')
+    except FileNotFoundError:
+        print(f"File not found: {bin_file_path}")
+        return []
 
 
 def get_random_event_and_birthday_for_date(data_by_date, date):
@@ -65,10 +70,9 @@ def is_valid_date_format(date_str):
         return False
 
 def main(current_date):
-    blacklist = load_blacklisted_words_from_binary('blacklisted_words.bin')
+    blacklist = load_blacklisted_words()
 
-    filename = "database.csv"
-    data_by_date = load_data_by_date(filename, blacklist)
+    data_by_date = load_data_by_date(blacklist)
 
     if(current_date == False):
         current_date = datetime.now().strftime("%B %d")
