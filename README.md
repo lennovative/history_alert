@@ -11,4 +11,18 @@ Ensure Python 3 is installed on your system.
 ### Install via pip
 ```bash
 pip install git+https://github.com/lennovative/history_alert.git
+```
 
+### Usage
+```bash
+historyalert
+```
+```
+historyalert -d MM-DD
+```
+```
+historyalert --silent -d MM-DD
+```
+
+$ historyalert -d 07-20
+On July 20, 1969, Apollo 11 successfully landed on the Moon, and Neil Armstrong became the first person to step on the lunar surface.
