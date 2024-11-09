@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='history_alert',
+    name='HistoryAlert',
     version='1.0.0',
     packages=find_packages(),
     include_package_data=True,  # Make sure this is enabled
