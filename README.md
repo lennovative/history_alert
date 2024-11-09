@@ -6,6 +6,9 @@ A CLI tool for discovering historical events that happened on specific dates. Us
 ### Prerequisites
 Ensure Python 3 is installed on your system.
 
+![HistoryAlert Banner](historyalert.png)
+
 ### Install via pip
 ```bash
 pip install git+https://github.com/lennovative/history_alert.git
+
