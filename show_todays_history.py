@@ -1,13 +1,12 @@
 import csv
 import random
 from datetime import datetime
-import base64
 import pkg_resources
 
-def load_data_by_date(filename, blacklist):
+def load_data_by_date(blacklist):
     data_by_date = {}
 
-    csv_file_path = pkg_resources.resource_filename(__name__, filename)
+    csv_file_path = pkg_resources.resource_filename(__name__, 'database.csv')
    
     with open(csv_file_path, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
@@ -74,8 +73,7 @@ def is_valid_date_format(date_str):
 def main(current_date):
     blacklist = load_blacklisted_words()
 
-    filename = "database.csv"
-    data_by_date = load_data_by_date(filename, blacklist)
+    data_by_date = load_data_by_date(blacklist)
 
     if(current_date == False):
         current_date = datetime.now().strftime("%B %d")
