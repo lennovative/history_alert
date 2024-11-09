@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: HistoryAlert
-Version: 1.0.0
-Summary: A CLI app for discovering historical events.
-Home-page: https://github.com/lennovative/history_alert
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent

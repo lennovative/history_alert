@@ -1,8 +1,0 @@
-main.py
-setup.py
-HistoryAlert.egg-info/PKG-INFO
-HistoryAlert.egg-info/SOURCES.txt
-HistoryAlert.egg-info/dependency_links.txt
-HistoryAlert.egg-info/entry_points.txt
-HistoryAlert.egg-info/requires.txt
-HistoryAlert.egg-info/top_level.txt

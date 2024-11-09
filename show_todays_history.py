@@ -32,7 +32,6 @@ def load_blacklisted_words():
     try:
         with open(bin_file_path, 'rb') as file:
             data = file.read()
-        print("File found and read successfully!")
         return data.decode('utf-8').split(',')
     except FileNotFoundError:
         print(f"File not found: {bin_file_path}")
