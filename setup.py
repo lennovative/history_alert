@@ -4,6 +4,7 @@ setup(
     name='HistoryAlert',
     version='1.0.0',
     packages=find_packages(),
+    include_package_data=True,
     py_modules=['main', 'show_todays_history', 'get_database', 'update_events'],
     entry_points={
         'console_scripts': [
