@@ -3,6 +3,9 @@ import pyfiglet
 from colorama import Fore, Style
 import show_todays_history as tools
 from datetime import datetime
+import csv
+import random
+import base64
 
 def main():
     banner = pyfiglet.figlet_format("HistoryAlert")
