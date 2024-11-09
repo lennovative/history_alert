@@ -6,7 +6,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        '': ['blacklisted_words.bin'],  # Adjust the path as necessary
+        '': ['blacklisted_words.bin'],
+        '': ['database.csv'],
     },
     py_modules=['main', 'show_todays_history', 'get_database', 'update_events'],
     entry_points={

@@ -1,1 +1,2 @@
 include blacklisted_words.bin
+include database.csv

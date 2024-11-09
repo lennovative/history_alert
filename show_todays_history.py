@@ -7,7 +7,9 @@ import pkg_resources
 def load_data_by_date(filename, blacklist):
     data_by_date = {}
 
-    with open(filename, mode="r", encoding="utf-8") as file:
+    csv_file_path = pkg_resources.resource_filename(__name__, filename)
+   
+    with open(csv_file_path, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
@@ -23,7 +25,6 @@ def load_data_by_date(filename, blacklist):
             data_by_date[date][event_type].append(row)
 
     return data_by_date
-
 
 
 def load_blacklisted_words():
