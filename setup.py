@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='HistoryAlert',
+    name='history_alert',
     version='1.0.0',
     packages=find_packages(),
-    include_package_data=True,  # Make sure this is enabled
+    include_package_data=True,
     package_data={
-        'history_alert': ['blacklisted_words.bin', 'database.csv'],  # Correctly reference the package name
+        'history_alert': ['blacklisted_words.bin', 'database.csv'],
     },
     py_modules=['main', 'show_todays_history', 'get_database', 'update_events'],
     entry_points={
