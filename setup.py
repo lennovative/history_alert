@@ -6,8 +6,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        '': ['blacklisted_words.bin'],
-        '': ['database.csv'],
+        '': ['blacklisted_words.bin', 'database.csv'],
     },
     py_modules=['main', 'show_todays_history', 'get_database', 'update_events'],
     entry_points={
@@ -15,7 +14,7 @@ setup(
             'historyalert=main:main',
         ],
     },
-    data_files=[('', ['blacklisted_words.bin'])],
+    data_files=[('', ['blacklisted_words.bin', 'database.csv'])],
     install_requires=[
         'pandas',
         'pyfiglet',
