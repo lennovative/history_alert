@@ -10,7 +10,7 @@ Ensure Python 3 is installed on your system.
 
 ### Install via pip
 ```bash
-git clone git+https://github.com/lennovative/history_alert.git
+pip install git+https://github.com/lennovative/history_alert.git
 # Than open historyalert exe file
 ```
 
